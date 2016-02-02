@@ -1,6 +1,6 @@
 ---
 title: "<center>Kyle Baron</center>"
-author: "<center>http://kylebmetrum.github.io</center><hr>"
+author: "<center>http://github.com/kylebmetrum</center><hr>"
 date: ""
 output: 
   html_document:
