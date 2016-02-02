@@ -1,0 +1,22 @@
+---
+title: "Kyle Baron"
+author: ""
+date: ""
+output: 
+  html_document:
+    toc: yes
+    theme: united
+
+---
+
+<hr>
+
+# About
+* My name is Kyle
+
+
+# Watch this ....
+```{r}
+hist(rnorm(10000))
+```
+
