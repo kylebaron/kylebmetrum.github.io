@@ -24,7 +24,11 @@ RNGkind()
 ##' but important to note.
 ##' 
 
+##' 
 ##' ## Some functions to help
+##' 
+##' Simulate 100 subjects by default
+##' 
 sim <- function(i,x,idata=data_frame(ID=1:100)) {
   x %>% idata_set(idata) %>% mrgsim(end=-1) %>% as.tbl
 }
