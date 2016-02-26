@@ -15,6 +15,8 @@ library(dplyr)
 library(magrittr)
 library(parallel)
 mcRNG()
+set.seed(20202)
+mc.reset.stream()
 RNGkind()
 
 
@@ -48,7 +50,7 @@ smry <- function(x) {
 
 #+
 code <- '
-$OMEGA 1 1 1
+$OMEGA 1 2 3
 $TABLE 
 table(ETA1) = ETA(1);
 table(ETA2) = ETA(2);
@@ -107,18 +109,15 @@ out3 %>% do(smry(.))
 options(mc.cores=4)
 
 set.seed(101)
-mc.reset.stream()
 out1 <- mclapply(1:10, sim, mod) %>% bind_rows
 
 set.seed(202)
-mc.reset.stream()
 out2 <- mclapply(1:10, sim, mod) %>% bind_rows
 
 #+
 identical(out1,out2)
 
 set.seed(101) 
-mc.reset.stream()
 out3 <- mclapply(1:10, sim, mod) %>% bind_rows
 
 #+
@@ -126,7 +125,6 @@ identical(out1,out3)
 
 ##' ### The result will change when you change number of cores
 set.seed(101) 
-mc.reset.stream()
 out4 <- mclapply(1:10, mc.cores=2, sim, mod) %>% bind_rows
 
 identical(out3,out4)

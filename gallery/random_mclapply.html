@@ -63,7 +63,7 @@ img {
 <div id="header">
 <h1 class="title">Simulation with <code>mclapply</code> is random</h1>
 <h4 class="author"><em>Kyle Baron</em></h4>
-<h4 class="date"><em>Thu Feb 25 16:52:39 2016</em></h4>
+<h4 class="date"><em>Thu Feb 25 21:38:27 2016</em></h4>
 </div>
 
 
@@ -74,6 +74,8 @@ library(dplyr)
 library(magrittr)
 library(parallel)
 mcRNG()
+set.seed(20202)
+mc.reset.stream()
 RNGkind()</code></pre>
 <pre><code>## [1] &quot;L'Ecuyer-CMRG&quot; &quot;Inversion&quot;</code></pre>
 <div id="this-is-tedious-to-follow" class="section level1">
@@ -99,7 +101,7 @@ RNGkind()</code></pre>
 <div id="simulate-some-etas" class="section level1">
 <h1>Simulate some ETAs</h1>
 <pre class="r"><code>code &lt;- '
-$OMEGA 1 1 1
+$OMEGA 1 2 3
 $TABLE 
 table(ETA1) = ETA(1);
 table(ETA2) = ETA(2);
@@ -142,19 +144,19 @@ out3 &lt;- lapply(1:10, sim, mod) %&gt;% bind_rows</code></pre>
 . 
 .   nETA1    sETA1    vETA1 nETA2    sETA2    vETA2     n
 .   (int)    (dbl)    (dbl) (int)    (dbl)    (dbl) (int)
-. 1  1000 57.59612 1.028979  1000 49.30196 1.002589  1000</code></pre>
+. 1  1000 57.59612 1.028979  1000 69.72351 2.005177  1000</code></pre>
 <pre class="r"><code>out2 %&gt;% do(smry(.))</code></pre>
 <pre><code>. Source: local data frame [1 x 7]
 . 
 .   nETA1    sETA1    vETA1 nETA2    sETA2    vETA2     n
 .   (int)    (dbl)    (dbl) (int)    (dbl)    (dbl) (int)
-. 1  1000 -25.3353 1.053098  1000 2.752463 1.011391  1000</code></pre>
+. 1  1000 -25.3353 1.053098  1000 3.892571 2.022783  1000</code></pre>
 <pre class="r"><code>out3 %&gt;% do(smry(.))</code></pre>
 <pre><code>. Source: local data frame [1 x 7]
 . 
 .   nETA1    sETA1    vETA1 nETA2    sETA2    vETA2     n
 .   (int)    (dbl)    (dbl) (int)    (dbl)    (dbl) (int)
-. 1  1000 57.59612 1.028979  1000 49.30196 1.002589  1000</code></pre>
+. 1  1000 57.59612 1.028979  1000 69.72351 2.005177  1000</code></pre>
 </div>
 </div>
 <div id="reproducible-results-with-mclapply" class="section level1">
@@ -162,23 +164,19 @@ out3 &lt;- lapply(1:10, sim, mod) %&gt;% bind_rows</code></pre>
 <pre class="r"><code>options(mc.cores=4)
 
 set.seed(101)
-mc.reset.stream()
 out1 &lt;- mclapply(1:10, sim, mod) %&gt;% bind_rows
 
 set.seed(202)
-mc.reset.stream()
 out2 &lt;- mclapply(1:10, sim, mod) %&gt;% bind_rows</code></pre>
 <pre class="r"><code>identical(out1,out2)</code></pre>
 <pre><code>. [1] FALSE</code></pre>
 <pre class="r"><code>set.seed(101) 
-mc.reset.stream()
 out3 &lt;- mclapply(1:10, sim, mod) %&gt;% bind_rows</code></pre>
 <pre class="r"><code>identical(out1,out3)</code></pre>
 <pre><code>. [1] TRUE</code></pre>
 <div id="the-result-will-change-when-you-change-number-of-cores" class="section level3">
 <h3>The result will change when you change number of cores</h3>
 <pre class="r"><code>set.seed(101) 
-mc.reset.stream()
 out4 &lt;- mclapply(1:10, mc.cores=2, sim, mod) %&gt;% bind_rows
 
 identical(out3,out4)</code></pre>
@@ -191,25 +189,25 @@ identical(out3,out4)</code></pre>
 . 
 .   nETA1     sETA1    vETA1 nETA2    sETA2    vETA2     n
 .   (int)     (dbl)    (dbl) (int)    (dbl)    (dbl) (int)
-. 1  1000 -17.30627 1.050345  1000 39.73398 1.016927  1000</code></pre>
+. 1  1000 -17.30627 1.050345  1000 56.19233 2.033853  1000</code></pre>
 <pre class="r"><code>out2 %&gt;% do(smry(.))</code></pre>
 <pre><code>. Source: local data frame [1 x 7]
 . 
-.   nETA1    sETA1     vETA1 nETA2     sETA2     vETA2     n
-.   (int)    (dbl)     (dbl) (int)     (dbl)     (dbl) (int)
-. 1  1000 16.18338 0.9802223  1000 -17.20325 0.9993898  1000</code></pre>
+.   nETA1    sETA1     vETA1 nETA2     sETA2   vETA2     n
+.   (int)    (dbl)     (dbl) (int)     (dbl)   (dbl) (int)
+. 1  1000 16.18338 0.9802223  1000 -24.32906 1.99878  1000</code></pre>
 <pre class="r"><code>out3 %&gt;% do(smry(.))</code></pre>
 <pre><code>. Source: local data frame [1 x 7]
 . 
 .   nETA1     sETA1    vETA1 nETA2    sETA2    vETA2     n
 .   (int)     (dbl)    (dbl) (int)    (dbl)    (dbl) (int)
-. 1  1000 -17.30627 1.050345  1000 39.73398 1.016927  1000</code></pre>
+. 1  1000 -17.30627 1.050345  1000 56.19233 2.033853  1000</code></pre>
 <pre class="r"><code>out4 %&gt;% do(smry(.))</code></pre>
 <pre><code>. Source: local data frame [1 x 7]
 . 
 .   nETA1     sETA1    vETA1 nETA2    sETA2    vETA2     n
 .   (int)     (dbl)    (dbl) (int)    (dbl)    (dbl) (int)
-. 1  1000 -31.77332 1.033577  1000 9.046932 1.020632  1000</code></pre>
+. 1  1000 -31.77332 1.033577  1000 12.79429 2.041264  1000</code></pre>
 <p><code>sessionInfo()</code></p>
 <pre class="r"><code>sessionInfo()</code></pre>
 <pre><code>. R version 3.2.1 (2015-06-18)
