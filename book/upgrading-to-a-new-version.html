@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>mrgsolve Users Guide</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.0.70 and GitBook 2.6.7">
+
+  <meta property="og:title" content="mrgsolve Users Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="mrgsolve Users Guide" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Metrum Research Group, LLC">
+
+<meta name="date" content="2016-05-01">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="example-installation-code.html">
+<link rel="next" href="model-components.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Users Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3</b> Installation</a><ul>
+<li class="chapter" data-level="3.1" data-path="installation.html"><a href="installation.html#installing-packages-in-r"><i class="fa fa-check"></i><b>3.1</b> Installing packages in <code>R</code></a></li>
+<li class="chapter" data-level="3.2" data-path="installation.html"><a href="installation.html#required-packages"><i class="fa fa-check"></i><b>3.2</b> Required packages</a></li>
+<li class="chapter" data-level="3.3" data-path="installation.html"><a href="installation.html#suggested-packages"><i class="fa fa-check"></i><b>3.3</b> Suggested packages</a></li>
+<li class="chapter" data-level="3.4" data-path="installation.html"><a href="installation.html#compilers"><i class="fa fa-check"></i><b>3.4</b> Compilers</a></li>
+<li class="chapter" data-level="3.5" data-path="installation.html"><a href="installation.html#windows-users"><i class="fa fa-check"></i><b>3.5</b> Windows users</a></li>
+<li class="chapter" data-level="3.6" data-path="installation.html"><a href="installation.html#mac-osx-users"><i class="fa fa-check"></i><b>3.6</b> Mac OSX users</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="installation.html"><a href="installation.html#if-using-r-binary-from-cran"><i class="fa fa-check"></i><b>3.6.1</b> If using <code>R</code> binary from CRAN</a></li>
+<li class="chapter" data-level="3.6.2" data-path="installation.html"><a href="installation.html#if-using-r-installed-from-homebrew"><i class="fa fa-check"></i><b>3.6.2</b> If using <code>R</code> installed from <code>homebrew</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="installation.html"><a href="installation.html#unix-users"><i class="fa fa-check"></i><b>3.7</b> Unix users</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="example-installation-code.html"><a href="example-installation-code.html"><i class="fa fa-check"></i><b>4</b> Example installation code</a><ul>
+<li class="chapter" data-level="4.1" data-path="example-installation-code.html"><a href="example-installation-code.html#setup"><i class="fa fa-check"></i><b>4.1</b> Setup</a></li>
+<li class="chapter" data-level="4.2" data-path="example-installation-code.html"><a href="example-installation-code.html#install-dependencies"><i class="fa fa-check"></i><b>4.2</b> Install dependencies</a></li>
+<li class="chapter" data-level="4.3" data-path="example-installation-code.html"><a href="example-installation-code.html#install-mrgsolve"><i class="fa fa-check"></i><b>4.3</b> Install <code>mrgsolve</code></a></li>
+<li class="chapter" data-level="4.4" data-path="example-installation-code.html"><a href="example-installation-code.html#test-the-installation"><i class="fa fa-check"></i><b>4.4</b> Test the installation</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="upgrading-to-a-new-version.html"><a href="upgrading-to-a-new-version.html"><i class="fa fa-check"></i><b>5</b> Upgrading to a new version</a></li>
+<li class="chapter" data-level="6" data-path="model-components.html"><a href="model-components.html"><i class="fa fa-check"></i><b>6</b> Model components</a><ul>
+<li class="chapter" data-level="6.1" data-path="model-components.html"><a href="model-components.html#parameter-list"><i class="fa fa-check"></i><b>6.1</b> Parameter list</a></li>
+<li class="chapter" data-level="6.2" data-path="model-components.html"><a href="model-components.html#compartment-list"><i class="fa fa-check"></i><b>6.2</b> Compartment list</a></li>
+<li class="chapter" data-level="6.3" data-path="model-components.html"><a href="model-components.html#simulation-time-grid"><i class="fa fa-check"></i><b>6.3</b> Simulation time grid</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="model-components.html"><a href="model-components.html#tgrid-objects"><i class="fa fa-check"></i><b>6.3.1</b> <code>tgrid</code> objects</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="model-components.html"><a href="model-components.html#solver-settings"><i class="fa fa-check"></i><b>6.4</b> Solver settings</a></li>
+<li class="chapter" data-level="6.5" data-path="model-components.html"><a href="model-components.html#functions"><i class="fa fa-check"></i><b>6.5</b> Functions</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="model-components.html"><a href="model-components.html#the-main-function"><i class="fa fa-check"></i><b>6.5.1</b> The <code>$MAIN</code> function</a></li>
+<li class="chapter" data-level="6.5.2" data-path="model-components.html"><a href="model-components.html#the-ode-function"><i class="fa fa-check"></i><b>6.5.2</b> The <code>$ODE</code> function</a></li>
+<li class="chapter" data-level="6.5.3" data-path="model-components.html"><a href="model-components.html#the-table-function"><i class="fa fa-check"></i><b>6.5.3</b> The <code>$TABLE</code> function</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="model-components.html"><a href="model-components.html#random-effect-variances"><i class="fa fa-check"></i><b>6.6</b> Random effect variances</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="model-components.html"><a href="model-components.html#omega"><i class="fa fa-check"></i><b>6.6.1</b> <code>OMEGA</code></a></li>
+<li class="chapter" data-level="6.6.2" data-path="model-components.html"><a href="model-components.html#sigma"><i class="fa fa-check"></i><b>6.6.2</b> <code>SIGMA</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="model-specification.html"><a href="model-specification.html"><i class="fa fa-check"></i><b>7</b> Model specification</a><ul>
+<li class="chapter" data-level="7.1" data-path="model-specification.html"><a href="model-specification.html#variables-and-macros"><i class="fa fa-check"></i><b>7.1</b> Variables and Macros</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="model-specification.html"><a href="model-specification.html#evid"><i class="fa fa-check"></i><b>7.1.1</b> <code>EVID</code></a></li>
+<li class="chapter" data-level="7.1.2" data-path="model-specification.html"><a href="model-specification.html#newind"><i class="fa fa-check"></i><b>7.1.2</b> <code>NEWIND</code></a></li>
+<li class="chapter" data-level="7.1.3" data-path="model-specification.html"><a href="model-specification.html#etan"><i class="fa fa-check"></i><b>7.1.3</b> <code>ETA(n)</code></a></li>
+<li class="chapter" data-level="7.1.4" data-path="model-specification.html"><a href="model-specification.html#epsn"><i class="fa fa-check"></i><b>7.1.4</b> <code>EPS(n)</code></a></li>
+<li class="chapter" data-level="7.1.5" data-path="model-specification.html"><a href="model-specification.html#tablename"><i class="fa fa-check"></i><b>7.1.5</b> <code>table(name)</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="model-specification.html"><a href="model-specification.html#code-blocks"><i class="fa fa-check"></i><b>7.2</b> Code blocks</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="model-specification.html"><a href="model-specification.html#param"><i class="fa fa-check"></i><b>7.2.1</b> <code>$PARAM</code></a></li>
+<li class="chapter" data-level="7.2.2" data-path="model-specification.html"><a href="model-specification.html#init-and-cmt"><i class="fa fa-check"></i><b>7.2.2</b> <code>$INIT</code> and <code>$CMT</code></a></li>
+<li class="chapter" data-level="7.2.3" data-path="model-specification.html"><a href="model-specification.html#main"><i class="fa fa-check"></i><b>7.2.3</b> <code>$MAIN</code></a></li>
+<li class="chapter" data-level="7.2.4" data-path="model-specification.html"><a href="model-specification.html#ode"><i class="fa fa-check"></i><b>7.2.4</b> <code>$ODE</code></a></li>
+<li class="chapter" data-level="7.2.5" data-path="model-specification.html"><a href="model-specification.html#table-and-capture"><i class="fa fa-check"></i><b>7.2.5</b> <code>$TABLE</code> and <code>$CAPTURE</code></a></li>
+<li class="chapter" data-level="7.2.6" data-path="model-specification.html"><a href="model-specification.html#omega-1"><i class="fa fa-check"></i><b>7.2.6</b> <code>$OMEGA</code></a></li>
+<li class="chapter" data-level="7.2.7" data-path="model-specification.html"><a href="model-specification.html#sigma-1"><i class="fa fa-check"></i><b>7.2.7</b> <code>$SIGMA</code></a></li>
+<li class="chapter" data-level="7.2.8" data-path="model-specification.html"><a href="model-specification.html#set"><i class="fa fa-check"></i><b>7.2.8</b> <code>$SET</code></a></li>
+<li class="chapter" data-level="7.2.9" data-path="model-specification.html"><a href="model-specification.html#global"><i class="fa fa-check"></i><b>7.2.9</b> <code>$GLOBAL</code></a></li>
+<li class="chapter" data-level="7.2.10" data-path="model-specification.html"><a href="model-specification.html#pkmodel"><i class="fa fa-check"></i><b>7.2.10</b> <code>$PKMODEL</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="input-data-sets.html"><a href="input-data-sets.html"><i class="fa fa-check"></i><b>8</b> Input data sets</a><ul>
+<li class="chapter" data-level="8.1" data-path="input-data-sets.html"><a href="input-data-sets.html#overview"><i class="fa fa-check"></i><b>8.1</b> Overview</a></li>
+<li class="chapter" data-level="8.2" data-path="input-data-sets.html"><a href="input-data-sets.html#special-columns-in-data-sets"><i class="fa fa-check"></i><b>8.2</b> Special columns in data sets</a></li>
+<li class="chapter" data-level="8.3" data-path="input-data-sets.html"><a href="input-data-sets.html#event-data-sets"><i class="fa fa-check"></i><b>8.3</b> Event data sets</a></li>
+<li class="chapter" data-level="8.4" data-path="input-data-sets.html"><a href="input-data-sets.html#individual-data-sets"><i class="fa fa-check"></i><b>8.4</b> Individual data sets</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="simulated-output.html"><a href="simulated-output.html"><i class="fa fa-check"></i><b>9</b> Simulated output</a></li>
+<li class="chapter" data-level="10" data-path="r-workflow.html"><a href="r-workflow.html"><i class="fa fa-check"></i><b>10</b> R workflow</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">mrgsolve Users Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="upgrading-to-a-new-version" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Upgrading to a new version</h1>
+<p>Users are encouraged to re-install or re-compile <code>Rcpp</code> and <code>RcppArmadillo</code> prior to upgrading to a new version of <code>mrgsolve</code>. To upgrade <code>mrgsolve</code>, simply follow the install step above.</p>
+<hr>
+<center>
+© 2016 Metrum Research Group, LLC<br><a href="http://www.metrumrg.com">www.metrumrg.com</a>
+</center>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="example-installation-code.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-components.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

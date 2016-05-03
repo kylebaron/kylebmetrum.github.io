@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>mrgsolve Users Guide</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="A guide to using mrgsolve.">
+  <meta name="generator" content="bookdown 0.0.70 and GitBook 2.6.7">
+
+  <meta property="og:title" content="mrgsolve Users Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A guide to using mrgsolve." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="mrgsolve Users Guide" />
+  
+  <meta name="twitter:description" content="A guide to using mrgsolve." />
+  
+
+<meta name="author" content="Metrum Research Group, LLC">
+
+<meta name="date" content="2016-05-02">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="installation.html">
+<link rel="next" href="model-specification.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Users Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> mrgsolve Users Guide</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#session-info"><i class="fa fa-check"></i><b>1.1</b> Session Info</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3</b> Installation</a><ul>
+<li class="chapter" data-level="3.1" data-path="installation.html"><a href="installation.html#installing-packages-in-r"><i class="fa fa-check"></i><b>3.1</b> Installing packages in <code>R</code></a></li>
+<li class="chapter" data-level="3.2" data-path="installation.html"><a href="installation.html#required-packages"><i class="fa fa-check"></i><b>3.2</b> Required packages</a></li>
+<li class="chapter" data-level="3.3" data-path="installation.html"><a href="installation.html#suggested-packages"><i class="fa fa-check"></i><b>3.3</b> Suggested packages</a></li>
+<li class="chapter" data-level="3.4" data-path="installation.html"><a href="installation.html#compilers"><i class="fa fa-check"></i><b>3.4</b> Compilers</a></li>
+<li class="chapter" data-level="3.5" data-path="installation.html"><a href="installation.html#windows-users"><i class="fa fa-check"></i><b>3.5</b> Windows users</a></li>
+<li class="chapter" data-level="3.6" data-path="installation.html"><a href="installation.html#mac-osx-users"><i class="fa fa-check"></i><b>3.6</b> Mac OSX users</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="installation.html"><a href="installation.html#if-using-r-binary-from-cran"><i class="fa fa-check"></i><b>3.6.1</b> If using <code>R</code> binary from CRAN</a></li>
+<li class="chapter" data-level="3.6.2" data-path="installation.html"><a href="installation.html#if-using-r-installed-from-homebrew"><i class="fa fa-check"></i><b>3.6.2</b> If using <code>R</code> installed from <code>homebrew</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="installation.html"><a href="installation.html#unix-users"><i class="fa fa-check"></i><b>3.7</b> Unix users</a></li>
+<li class="chapter" data-level="3.8" data-path="installation.html"><a href="installation.html#example-installation-code"><i class="fa fa-check"></i><b>3.8</b> Example installation code</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="installation.html"><a href="installation.html#setup"><i class="fa fa-check"></i><b>3.8.1</b> Setup</a></li>
+<li class="chapter" data-level="3.8.2" data-path="installation.html"><a href="installation.html#install-dependencies"><i class="fa fa-check"></i><b>3.8.2</b> Install dependencies</a></li>
+<li class="chapter" data-level="3.8.3" data-path="installation.html"><a href="installation.html#install-mrgsolve"><i class="fa fa-check"></i><b>3.8.3</b> Install <code>mrgsolve</code></a></li>
+<li class="chapter" data-level="3.8.4" data-path="installation.html"><a href="installation.html#test-the-installation"><i class="fa fa-check"></i><b>3.8.4</b> Test the installation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="installation.html"><a href="installation.html#upgrading-to-a-new-version"><i class="fa fa-check"></i><b>3.9</b> Upgrading to a new version</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="model-components.html"><a href="model-components.html"><i class="fa fa-check"></i><b>4</b> Model components</a><ul>
+<li class="chapter" data-level="4.1" data-path="model-components.html"><a href="model-components.html#parameter-list"><i class="fa fa-check"></i><b>4.1</b> Parameter list</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="model-components.html"><a href="model-components.html#central-role-of-parameters-in-planning-simulations"><i class="fa fa-check"></i><b>4.1.1</b> Central role of parameters in planning simulations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="model-components.html"><a href="model-components.html#compartment-list"><i class="fa fa-check"></i><b>4.2</b> Compartment list</a></li>
+<li class="chapter" data-level="4.3" data-path="model-components.html"><a href="model-components.html#simulation-time-grid"><i class="fa fa-check"></i><b>4.3</b> Simulation time grid</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="model-components.html"><a href="model-components.html#tgrid-objects"><i class="fa fa-check"></i><b>4.3.1</b> <code>tgrid</code> objects</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="model-components.html"><a href="model-components.html#solver-settings"><i class="fa fa-check"></i><b>4.4</b> Solver settings</a></li>
+<li class="chapter" data-level="4.5" data-path="model-components.html"><a href="model-components.html#functions"><i class="fa fa-check"></i><b>4.5</b> Functions</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="model-components.html"><a href="model-components.html#the-main-function"><i class="fa fa-check"></i><b>4.5.1</b> The <code>$MAIN</code> function</a></li>
+<li class="chapter" data-level="4.5.2" data-path="model-components.html"><a href="model-components.html#the-ode-function"><i class="fa fa-check"></i><b>4.5.2</b> The <code>$ODE</code> function</a></li>
+<li class="chapter" data-level="4.5.3" data-path="model-components.html"><a href="model-components.html#the-table-function"><i class="fa fa-check"></i><b>4.5.3</b> The <code>$TABLE</code> function</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="model-components.html"><a href="model-components.html#random-effect-variances"><i class="fa fa-check"></i><b>4.6</b> Random effect variances</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="model-components.html"><a href="model-components.html#omega"><i class="fa fa-check"></i><b>4.6.1</b> <code>OMEGA</code></a></li>
+<li class="chapter" data-level="4.6.2" data-path="model-components.html"><a href="model-components.html#sigma"><i class="fa fa-check"></i><b>4.6.2</b> <code>SIGMA</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="model-specification.html"><a href="model-specification.html"><i class="fa fa-check"></i><b>5</b> Model specification</a><ul>
+<li class="chapter" data-level="5.1" data-path="model-specification.html"><a href="model-specification.html#variables-and-macros"><i class="fa fa-check"></i><b>5.1</b> Variables and Macros</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="model-specification.html"><a href="model-specification.html#id"><i class="fa fa-check"></i><b>5.1.1</b> <code>ID</code></a></li>
+<li class="chapter" data-level="5.1.2" data-path="model-specification.html"><a href="model-specification.html#time"><i class="fa fa-check"></i><b>5.1.2</b> <code>TIME</code></a></li>
+<li class="chapter" data-level="5.1.3" data-path="model-specification.html"><a href="model-specification.html#solvertime"><i class="fa fa-check"></i><b>5.1.3</b> <code>SOLVERTIME</code></a></li>
+<li class="chapter" data-level="5.1.4" data-path="model-specification.html"><a href="model-specification.html#evid"><i class="fa fa-check"></i><b>5.1.4</b> <code>EVID</code></a></li>
+<li class="chapter" data-level="5.1.5" data-path="model-specification.html"><a href="model-specification.html#newind"><i class="fa fa-check"></i><b>5.1.5</b> <code>NEWIND</code></a></li>
+<li class="chapter" data-level="5.1.6" data-path="model-specification.html"><a href="model-specification.html#etan"><i class="fa fa-check"></i><b>5.1.6</b> <code>ETA(n)</code></a></li>
+<li class="chapter" data-level="5.1.7" data-path="model-specification.html"><a href="model-specification.html#epsn"><i class="fa fa-check"></i><b>5.1.7</b> <code>EPS(n)</code></a></li>
+<li class="chapter" data-level="5.1.8" data-path="model-specification.html"><a href="model-specification.html#tablename"><i class="fa fa-check"></i><b>5.1.8</b> <code>table(name)</code></a></li>
+<li class="chapter" data-level="5.1.9" data-path="model-specification.html"><a href="model-specification.html#f_cmt"><i class="fa fa-check"></i><b>5.1.9</b> <code>F_CMT</code></a></li>
+<li class="chapter" data-level="5.1.10" data-path="model-specification.html"><a href="model-specification.html#alag_cmt"><i class="fa fa-check"></i><b>5.1.10</b> <code>ALAG_CMT</code></a></li>
+<li class="chapter" data-level="5.1.11" data-path="model-specification.html"><a href="model-specification.html#r_cmt"><i class="fa fa-check"></i><b>5.1.11</b> <code>R_CMT</code></a></li>
+<li class="chapter" data-level="5.1.12" data-path="model-specification.html"><a href="model-specification.html#d_cmt"><i class="fa fa-check"></i><b>5.1.12</b> <code>D_CMT</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="model-specification.html"><a href="model-specification.html#code-blocks"><i class="fa fa-check"></i><b>5.2</b> Code blocks</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="model-specification.html"><a href="model-specification.html#param"><i class="fa fa-check"></i><b>5.2.1</b> <code>$PARAM</code></a></li>
+<li class="chapter" data-level="5.2.2" data-path="model-specification.html"><a href="model-specification.html#fixed"><i class="fa fa-check"></i><b>5.2.2</b> <code>$FIXED</code></a></li>
+<li class="chapter" data-level="5.2.3" data-path="model-specification.html"><a href="model-specification.html#cmt-and-init"><i class="fa fa-check"></i><b>5.2.3</b> <code>$CMT</code> and <code>$INIT</code></a></li>
+<li class="chapter" data-level="5.2.4" data-path="model-specification.html"><a href="model-specification.html#main"><i class="fa fa-check"></i><b>5.2.4</b> <code>$MAIN</code></a></li>
+<li class="chapter" data-level="5.2.5" data-path="model-specification.html"><a href="model-specification.html#ode"><i class="fa fa-check"></i><b>5.2.5</b> <code>$ODE</code></a></li>
+<li class="chapter" data-level="5.2.6" data-path="model-specification.html"><a href="model-specification.html#table"><i class="fa fa-check"></i><b>5.2.6</b> <code>$TABLE</code></a></li>
+<li class="chapter" data-level="5.2.7" data-path="model-specification.html"><a href="model-specification.html#capture"><i class="fa fa-check"></i><b>5.2.7</b> <code>$CAPTURE</code></a></li>
+<li class="chapter" data-level="5.2.8" data-path="model-specification.html"><a href="model-specification.html#omega-1"><i class="fa fa-check"></i><b>5.2.8</b> <code>$OMEGA</code></a></li>
+<li class="chapter" data-level="5.2.9" data-path="model-specification.html"><a href="model-specification.html#sigma-1"><i class="fa fa-check"></i><b>5.2.9</b> <code>$SIGMA</code></a></li>
+<li class="chapter" data-level="5.2.10" data-path="model-specification.html"><a href="model-specification.html#set"><i class="fa fa-check"></i><b>5.2.10</b> <code>$SET</code></a></li>
+<li class="chapter" data-level="5.2.11" data-path="model-specification.html"><a href="model-specification.html#global"><i class="fa fa-check"></i><b>5.2.11</b> <code>$GLOBAL</code></a></li>
+<li class="chapter" data-level="5.2.12" data-path="model-specification.html"><a href="model-specification.html#pkmodel"><i class="fa fa-check"></i><b>5.2.12</b> <code>$PKMODEL</code></a></li>
+<li class="chapter" data-level="5.2.13" data-path="model-specification.html"><a href="model-specification.html#theta"><i class="fa fa-check"></i><b>5.2.13</b> <code>$THETA</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="model-specification.html"><a href="model-specification.html#new-variables"><i class="fa fa-check"></i><b>5.3</b> Derive new variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="input-data-sets.html"><a href="input-data-sets.html"><i class="fa fa-check"></i><b>6</b> Input data sets</a><ul>
+<li class="chapter" data-level="6.1" data-path="input-data-sets.html"><a href="input-data-sets.html#datasets"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="input-data-sets.html"><a href="input-data-sets.html#data-set"><i class="fa fa-check"></i><b>6.2</b> Event data sets</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="input-data-sets.html"><a href="input-data-sets.html#sorting"><i class="fa fa-check"></i><b>6.2.1</b> Sorting</a></li>
+<li class="chapter" data-level="6.2.2" data-path="input-data-sets.html"><a href="input-data-sets.html#creating-data-sets"><i class="fa fa-check"></i><b>6.2.2</b> Creating data sets</a></li>
+<li class="chapter" data-level="6.2.3" data-path="input-data-sets.html"><a href="input-data-sets.html#example"><i class="fa fa-check"></i><b>6.2.3</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="input-data-sets.html"><a href="input-data-sets.html#idata-set"><i class="fa fa-check"></i><b>6.3</b> Individual data sets</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="input-data-sets.html"><a href="input-data-sets.html#use-case"><i class="fa fa-check"></i><b>6.3.1</b> Use case</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="input-data-sets.html"><a href="input-data-sets.html#data-sets-the-parameter-list-and-parameter-updates"><i class="fa fa-check"></i><b>6.4</b> Data sets, the parameter list and parameter updates</a></li>
+<li class="chapter" data-level="6.5" data-path="input-data-sets.html"><a href="input-data-sets.html#numeric-only"><i class="fa fa-check"></i><b>6.5</b> Numeric data only</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="simulated-output.html"><a href="simulated-output.html"><i class="fa fa-check"></i><b>7</b> Simulated output</a></li>
+<li class="chapter" data-level="8" data-path="topics.html"><a href="topics.html"><i class="fa fa-check"></i><b>8</b> Topics</a><ul>
+<li class="chapter" data-level="8.1" data-path="topics.html"><a href="topics.html#set-initial-conditions"><i class="fa fa-check"></i><b>8.1</b> Set initial conditions</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="topics.html"><a href="topics.html#summary"><i class="fa fa-check"></i><b>8.1.1</b> Summary</a></li>
+<li class="chapter" data-level="8.1.2" data-path="topics.html"><a href="topics.html#make-a-model-only-to-examine-init-behavior"><i class="fa fa-check"></i><b>8.1.2</b> Make a model only to examine <code>init</code> behavior</a></li>
+<li class="chapter" data-level="8.1.3" data-path="topics.html"><a href="topics.html#example-pkpd-model-with-initial-condition"><i class="fa fa-check"></i><b>8.1.3</b> Example PK/PD model with initial condition</a></li>
+<li class="chapter" data-level="8.1.4" data-path="topics.html"><a href="topics.html#remember-calling-init-will-let-you-check-to-see-what-is-going-on"><i class="fa fa-check"></i><b>8.1.4</b> Remember: calling <code>init</code> will let you check to see what is going on</a></li>
+<li class="chapter" data-level="8.1.5" data-path="topics.html"><a href="topics.html#set-initial-conditions-via-idata"><i class="fa fa-check"></i><b>8.1.5</b> Set initial conditions via <code>idata</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="topics.html"><a href="topics.html#topics-parameter-update"><i class="fa fa-check"></i><b>8.2</b> Updating parameters</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">mrgsolve Users Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="model-components" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Model components</h1>
+<p>This chapter details the different components of a model in <code>mrgsolve</code>.</p>
+<div id="parameter-list" class="section level2">
+<h2><span class="header-section-number">4.1</span> Parameter list</h2>
+<p>The parameter list is an updatable set of name-value pairs. Referencing the name of an item in the parameter list will substitute the current value associated with that name. While the name “paramter” may have a certain connotation in the modeling world, in <code>mrgsolve</code> a “parameter” could be any category of numeric data: covariates (e.g. <code>WT</code>, <code>AGE</code>, <code>SEX</code>), flags, other numeric data that we commonly call “parameter” (e.g. <code>CL</code> or <code>VC</code>).</p>
+<p>The parameter list is declared in the code block <code>$PARAM</code>. While there may be multiple <code>$PARAM</code> blocks in a model, these are condensed to a single parameter list stored in the model object. The names and numbers of all parameters in the model must be declared at the time that the model is compiled. Also, a default value for each parameter must be declared at model compile time, but the value of each parameter may be updated in one of several ways.</p>
+<p>The parameters in a model object can be queried or updated with the <code>param()</code> function.</p>
+<div id="central-role-of-parameters-in-planning-simulations" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Central role of parameters in planning simulations</h3>
+<p>The data items in the parameter list are more than just values associated with a name. When an name is added to the parameter list, that name becomes a key word that <code>mrgsolve</code> will start to recognize in input data sets or when manipulting the model object.</p>
+<p>For example, when you want to include a covariate in the model, say weight (<code>WT</code>), you’ll include a column in the data set called <code>WT</code> that will indicate the weight of this or that patient. It is crutial that you also list <code>WT</code> in <code>$PARAM</code> with some default value. It helps if that value is sensible too. When <code>mrgsolve</code> receives the data set prior to simulating, the <code>WT</code> column is matched up with the <code>WT</code> parameter name. As <code>mrgsolve</code> works its way through the input data set (from person to person or from time to time), the value of <code>WT</code> is updated so that the symbol <code>WT</code> in <code>$MAIN</code> or <code>$ODE</code> or <code>$TABLE</code> always points to the value of <code>WT</code>. If the <code>WT</code> name is not in the parameter list, it won’t matter if it is in the data set or not. Only listing a name in <code>$PARAM</code> gets it “into the game”.</p>
+<p>Understanding the parameter update mechanism is very important for planning complicated simulations with <code>mrgsolve</code>. Please review the information in <a href="input-data-sets.html#datasets">6.1</a> and in <a href="topics.html#topics-parameter-update">8.2</a>.</p>
+</div>
+</div>
+<div id="compartment-list" class="section level2">
+<h2><span class="header-section-number">4.2</span> Compartment list</h2>
+<p>Like the parameter list, the compartment list is a series of name-value pairs. The compartment list defines the number, names, and initial values of each compartment in the model. The names, numbers, and order of the compartment in a model is established at the time of model compile and changes to the compartment list require re-compilation of the model.</p>
+<p>Compartments are declared in one of two code blocks: <code>$INIT</code> and <code>$CMT</code>. Nominal initial values must be supplied for each compartment. The main difference between <code>$INIT</code> and <code>$CMT</code> is that <code>$CMT</code> assumes a default initial value of 0 for each compartment; thus only compartment names are entered. When using <code>$INIT</code>, both names and values must be explicitly stated for each compartment.</p>
+<p>The initial values for each compartment can be queried with the <code>init()</code> function. There are several different ways to set the initial conditions in a model.</p>
+</div>
+<div id="simulation-time-grid" class="section level2">
+<h2><span class="header-section-number">4.3</span> Simulation time grid</h2>
+<p>The <code>mrgsolve</code> model object stores the parameters for the series of time points to be output for a a simulation. This is the default output time grid that will be used if not over-ridden by another mechanism.</p>
+<p>The elements of the simulation time grid are: <code>start</code>, <code>end</code>, <code>delta</code> and <code>add</code>. <code>start</code>, <code>end</code>, <code>delta</code> are passed to <code>seq()</code> as <code>from</code>, <code>to</code>, and <code>by</code>, respectively. <code>add</code> is any arbitrary vector of __add__itional times to simulate.</p>
+<p>The simulation time grid in a model object may be queried with the <code>stime()</code> function or by printing the model object to the <code>R</code> console.</p>
+<div id="tgrid-objects" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> <code>tgrid</code> objects</h3>
+<p>A <code>tgrid</code> object has <code>start</code>, <code>end</code>, <code>delta</code> and <code>add</code> attributes. This object is independent of the model object. <code>tgrid</code> objects may be created and combined to create complex sampling designs.</p>
+</div>
+</div>
+<div id="solver-settings" class="section level2">
+<h2><span class="header-section-number">4.4</span> Solver settings</h2>
+<p><code>mrgsolve</code> uses the <code>DLSODA</code> solver from <code>ODEPACK</code>. Several of the settings for that solver are stored in the model object and passed to the solver when the problem is started. Settings include: <code>atol</code>, <code>rtol</code>, <code>maxsteps</code>, <code>hmax</code>, <code>hmin</code>, <code>ixpr</code>, <code>mxhnil</code>.</p>
+</div>
+<div id="functions" class="section level2">
+<h2><span class="header-section-number">4.5</span> Functions</h2>
+<p>There are three <code>C++</code> functions that <code>mrgsolve</code> creates and manages: <code>MAIN</code>, <code>ODE</code>, <code>TABLE</code>. Each function is created from an entire code block in the model specification file. The user is responsible for writing correct <code>C++</code> code in each of these blocks. <code>mrgsolve</code> will parse these blocks and augment this code with the necessary elements to create the <code>C++</code> function.</p>
+<p>These functions may be specified in any order in the model specification file, but there is a specific calling order that should be recognized. During advance from time <code>T1</code> to <code>T2</code>, first <code>$MAIN</code> is called, then <code>$ODE</code> is called repeatedly as the solver finds the values of state variables at <code>T2</code>, and, once the solution is found, <code>$TABLE</code> is called to calculate derived quantities at <code>T2</code> and to specify variables that should be included in the model output. So, it is helpful to write model specification files in the order:</p>
+<ol style="list-style-type: decimal">
+<li><code>$MAIN</code> - <strong>before</strong> advancing the system</li>
+<li><code>$ODE</code> - the system <strong>advance</strong></li>
+<li><code>$TABLE</code> - <strong>after</strong> advancing the system</li>
+</ol>
+<p>to remember the this calling order. But the order in which they are coded will not affect model compilation or the simulation result.</p>
+<div id="the-main-function" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> The <code>$MAIN</code> function</h3>
+<p>The <code>MAIN</code> function gets called at least once before the the solver advances from the current time (<code>T1</code>) to the next time (<code>T2</code>). In the <code>MAIN</code> function, the user may: * Set initial conditions for any compartment * Derive new variables to be used in the model * Write covariate models * Add between-subject variability to quantities to structural model paramters (e.g. <code>CL</code> or <code>VC</code>).</p>
+<p>In addition to getting called once per record, the <code>MAIN</code> function may be called several times prior to starting the simulation run. The <code>MAIN</code> function is also called whenever the user queries the compartment list.</p>
+</div>
+<div id="the-ode-function" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> The <code>$ODE</code> function</h3>
+<p>The <code>ODE</code> function is where the user writes the model differential equations. Any derived quantity that depends on a state variable and is used to to calculate the differentation must be calculated inside <code>$ODE</code>. But, this function is called repeatedly during the simulation run, so any calculation that <strong>can</strong> be moved out of <code>$ODE</code> (for example: to <code>$MAIN</code>) should be.</p>
+</div>
+<div id="the-table-function" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> The <code>$TABLE</code> function</h3>
+<p>The <code>TABLE</code> function is called <strong>after</strong> the solver advances in time. The purpose of <code>TABLE</code> is to allow the user to interact with the values of the state variables after advancing, potentially derive new variables, and to insert different outputs into the table of simulated results.</p>
+</div>
+</div>
+<div id="random-effect-variances" class="section level2">
+<h2><span class="header-section-number">4.6</span> Random effect variances</h2>
+<p>The <code>mrgsolve</code> model object keeps track of a arbitrary number of block matrices that are used to simulate variates from multivariate normal distributions. Users can specify <code>OMEGA</code> matrices for simulating between-subject random effects (one draw per individual) or <code>SIGMA</code> matrices for simulating within-subject random effects (one draw per observation.</p>
+<p>The user may use the <code>revar</code> function to query both <code>OMEGA</code> and <code>SIGMA</code>.</p>
+<div id="omega" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> <code>OMEGA</code></h3>
+<p>The matrices are specified in <code>$OMEGA</code> blocks in the model specification file.</p>
+<p><code>OMEGA</code> may be queried or updated with the <code>omat</code> function.</p>
+</div>
+<div id="sigma" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> <code>SIGMA</code></h3>
+<p>The matrices are specified in <code>$SIGMA</code> blocks in the model specification file.</p>
+<p><code>SIGMA</code> may be queried or updated by the <code>smat</code> function.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="installation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-specification.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
